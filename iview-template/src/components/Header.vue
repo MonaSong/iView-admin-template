@@ -8,10 +8,11 @@
         <Menu mode="horizontal" :theme="theme1" active-name="1" @on-select="selectOut">
           <Submenu name="3">
               <template slot="title">
-                  <Icon type="stats-bars"></Icon>
+                  <Icon type="person"></Icon>
                   用户设置
               </template>
               <Menu-item name="out">退出</Menu-item>
+              <Menu-item name="profile">个人信息</Menu-item>
           </Submenu>
       </Menu> 
       </Col>
@@ -31,8 +32,13 @@
     },
     methods: {
       selectOut (args) {
-        if (args === 'out') {
-          this.$router.push('/')
+        switch (args) {
+          case 'out':
+            this.$router.push('/')
+            break
+          case 'profile':
+            this.$router.push('/profile')
+            break
         }
       }
     }

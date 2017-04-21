@@ -17,7 +17,14 @@ export default new Router({
     {
       path: '/index',
       name: 'index',
-      component: resolve => require(['@/components/Home.vue'], resolve)
+      component: resolve => require(['@/components/Home.vue'], resolve),
+      children: [
+        {
+          path: '/profile',
+          name: 'profile',
+          component: resolve => require(['@/pages/Profile.vue'], resolve)
+        }
+      ]
     }
   ]
 })
