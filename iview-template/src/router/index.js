@@ -11,17 +11,18 @@ export default new Router({
     },
     {
       path: '/login',
-      name: 'login',
       component: resolve => require(['@/pages/Login.vue'], resolve)
     },
     {
       path: '/index',
-      name: 'index',
       component: resolve => require(['@/components/Home.vue'], resolve),
       children: [
         {
+          path: '/',
+          component: resolve => require(['@/pages/Dashbord.vue'])
+        },
+        {
           path: '/profile',
-          name: 'profile',
           component: resolve => require(['@/pages/Profile.vue'], resolve)
         }
       ]
