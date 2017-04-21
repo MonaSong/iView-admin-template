@@ -1,0 +1,61 @@
+<template>
+  <div class="header">
+    <div class="header-left">
+      iview-admin-template
+    </div>
+    <Row type="flex" justify="space-between">
+      <Col :xs="{ span: 24 }" :lg="{ span: 3, offset: 21 }">
+        <Menu mode="horizontal" :theme="theme1" active-name="1" @on-select="selectOut">
+          <Submenu name="3">
+              <template slot="title">
+                  <Icon type="stats-bars"></Icon>
+                  用户设置
+              </template>
+              <Menu-group title="使用">
+                  <Menu-item name="out">退出</Menu-item>
+              </Menu-group>
+          </Submenu>
+      </Menu> 
+      </Col>
+    </Row>
+  </div>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        right: '右边',
+        left: '左边',
+        theme1: 'light',
+        menuName: ''
+      }
+    },
+    methods: {
+      selectOut (args) {
+        if (args === 'out') {
+          this.$router.push('/')
+        }
+      }
+    }
+  }
+</script>
+
+<style lang="less">
+  @import '../assets/less/base.less';
+  .header{
+    height: 60px;
+    width: 100%;
+    background-color: @theme-color;
+    color: @white;
+    .header-left{
+      float: left;
+      height: 60px;
+      width: 240px;
+      padding-left: 30px;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 55px;;
+    }
+  }
+</style>
