@@ -44,10 +44,12 @@
 <style lang="less">
   @import '../assets/less/base.less';
   .header{
+    position: relative;
     height: 60px;
     width: 100%;
     background-color: @theme-color;
     color: @white;
+    z-index: 10;
     .header-left{
       float: left;
       height: 60px;
