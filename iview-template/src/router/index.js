@@ -19,7 +19,7 @@ export default new Router({
       children: [
         {
           path: '/',
-          component: resolve => require(['@/pages/Dashbord.vue'])
+          component: resolve => require(['@/pages/Dashbord.vue'], resolve)
         },
         {
           path: '/profile',
