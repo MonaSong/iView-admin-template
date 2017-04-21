@@ -11,9 +11,7 @@
                   <Icon type="stats-bars"></Icon>
                   用户设置
               </template>
-              <Menu-group title="使用">
-                  <Menu-item name="out">退出</Menu-item>
-              </Menu-group>
+              <Menu-item name="out">退出</Menu-item>
           </Submenu>
       </Menu> 
       </Col>
@@ -58,6 +56,16 @@
       font-size: 18px;
       font-weight: 700;
       line-height: 55px;;
+    }
+    .ivu-menu-light{
+      background-color: @theme-color;
+      height: 61px;
+      .ivu-menu-submenu-title{
+        color: @white;
+      }
+      .ivu-menu-submenu.ivu-menu-opened{
+        border-bottom: 1px solid transparent;
+      }
     }
   }
 </style>

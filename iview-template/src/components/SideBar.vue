@@ -1,62 +1,58 @@
 <template>
   <div class="sidebar">
-    <Row type="flex" justify="space-between" >
-      <Col :xs="{span:3}" :lg="{span:8}">
-        <div class="user-profile">
-          <Row type="flex" justify="center">
-            <Col :xs="{span:8,offset:2}">
-              <div class="user-img"></div>
-            </Col>
-            <Col :xs="{span:12,offset:1}">
-              <div class="user-profile-info">
-                <p>{{name}}</p>
-                <p class="profile-info">{{profile}}</p>
-              </div>
-            </Col>
-          </Row>
-        </div>
-        <div class="menu">
-          <Row type="flex" justify="space-between">
-            <Col>
-              <Menu :theme="theme2" active-name="1-2" :open-names="['1']" :width="auto">
-                <Submenu name="1">
-                  <template slot="title">
-                    <Icon type="ios-paper"></Icon>
-                    <span v-if="isShowMenu">内容管理</span>
-                  </template>
-                  <Menu-item name="1-1" v-if="isShowMenu">文章管理</Menu-item>
-                  <Menu-item name="1-2" v-if="isShowMenu">评论管理</Menu-item>
-                  <Menu-item name="1-3" v-if="isShowMenu">举报管理</Menu-item>
-                </Submenu>
-                <Submenu name="2">
-                  <template slot="title">
-                    <Icon type="ios-people"></Icon>
-                    <span v-if="isShowMenu">用户管理</span>
-                  </template>
-                  <Menu-item name="2-1" v-if="isShowMenu">新增用户</Menu-item>
-                  <Menu-item name="2-2"v-if="isShowMenu">活跃用户</Menu-item>
-                </Submenu>
-                <Submenu name="3">
-                  <template slot="title">
-                    <Icon type="stats-bars"></Icon>
-                    <span v-if="isShowMenu">统计分析</span>
-                  </template>
-                  <Menu-group title="使用" v-if="isShowMenu">
-                    <Menu-item name="3-1">新增和启动</Menu-item>
-                    <Menu-item name="3-2">活跃分析</Menu-item>
-                    <Menu-item name="3-3">时段分析</Menu-item>
-                  </Menu-group>
-                  <Menu-group title="留存" v-if="isShowMenu">
-                    <Menu-item name="3-4">用户留存</Menu-item>
-                    <Menu-item name="3-5">流失用户</Menu-item>
-                  </Menu-group>
-                </Submenu>
-              </Menu>
-            </Col>
-          </Row>
-        </div>
-      </Col>
-    </Row>
+    <div class="user-profile">
+      <Row type="flex" justify="center">
+        <Col :xs="{span:8,offset:2}">
+          <div class="user-img"></div>
+        </Col>
+        <Col :xs="{span:12,offset:1}">
+          <div class="user-profile-info">
+            <p>{{name}}</p>
+            <p class="profile-info">{{profile}}</p>
+          </div>
+        </Col>
+      </Row>
+    </div>
+    <div class="menu">
+      <Row type="flex" justify="space-between">
+        <Col :xs="{span:24}">
+          <Menu :theme="theme2" active-name="1-2" :open-names="['1']" :style="{width:'auto'}">
+            <Submenu name="1">
+              <template slot="title">
+                <Icon type="ios-paper"></Icon>
+                <span v-if="isShowMenu">内容管理</span>
+              </template>
+              <Menu-item name="1-1" v-if="isShowMenu">文章管理</Menu-item>
+              <Menu-item name="1-2" v-if="isShowMenu">评论管理</Menu-item>
+              <Menu-item name="1-3" v-if="isShowMenu">举报管理</Menu-item>
+            </Submenu>
+            <Submenu name="2">
+              <template slot="title">
+                <Icon type="ios-people"></Icon>
+                <span v-if="isShowMenu">用户管理</span>
+              </template>
+              <Menu-item name="2-1" v-if="isShowMenu">新增用户</Menu-item>
+              <Menu-item name="2-2"v-if="isShowMenu">活跃用户</Menu-item>
+            </Submenu>
+            <Submenu name="3">
+              <template slot="title">
+                <Icon type="stats-bars"></Icon>
+                <span v-if="isShowMenu">统计分析</span>
+              </template>
+              <Menu-group title="使用" v-if="isShowMenu">
+                <Menu-item name="3-1">新增和启动</Menu-item>
+                <Menu-item name="3-2">活跃分析</Menu-item>
+                <Menu-item name="3-3">时段分析</Menu-item>
+              </Menu-group>
+              <Menu-group title="留存" v-if="isShowMenu">
+                <Menu-item name="3-4">用户留存</Menu-item>
+                <Menu-item name="3-5">流失用户</Menu-item>
+              </Menu-group>
+            </Submenu>
+          </Menu>
+        </Col>
+      </Row>
+    </div>
   </div>
 </template>
 
@@ -75,17 +71,6 @@
       // alert(1)
     },
     mounted () {
-      let self = this
-      window.onresize = () => {
-        let wWidth = parseInt(window.outerWidth)
-        if (wWidth < 480) {
-          self.isShowMenu = false
-          self.smWidth = 60
-        } else {
-          self.isShowMenu = true
-          self.smWidth = 240
-        }
-      }
     },
     methods: {
       setMenuStyle () {
