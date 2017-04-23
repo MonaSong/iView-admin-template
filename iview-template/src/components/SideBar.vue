@@ -16,14 +16,14 @@
     <div class="menu">
       <Row type="flex" justify="space-between">
         <Col :xs="{span:24}">
-          <Menu :theme="theme2" active-name="1-2" :open-names="['1']" :style="{width:'auto'}" @on-select="skipPage">
+          <Menu :theme="theme2" active-name="dashboard" :open-names="['1']" :style="{width:'auto'}" @on-select="skipPage">
             <Submenu name="1">
               <template slot="title">
                 <Icon type="ios-paper"></Icon>
                 <span v-if="isShowMenu">内容管理</span>
               </template>
-              <Menu-item name="profile">用户首页</Menu-item>
-              <Menu-item name="1-2" >评论管理</Menu-item>
+              <Menu-item name="dashboard">首页</Menu-item>
+              <Menu-item name="profile" >用户中心</Menu-item>
               <Menu-item name="1-3">举报管理</Menu-item>
             </Submenu>
             <Submenu name="2">
@@ -74,8 +74,13 @@
     },
     methods: {
       skipPage (args) {
-        if (args === 'profile') {
-          this.$router.push('/profile')
+        switch (args) {
+          case 'dashboard':
+            this.$router.push('/index')
+            break
+          case 'profile':
+            this.$router.push('/profile')
+            break
         }
       }
     }
@@ -85,6 +90,7 @@
 <style lang="less">
   @import '../assets/less/base.less';
   .sidebar{
+    position: absolute;
     width: 240px;
     &:before{
       position: fixed;

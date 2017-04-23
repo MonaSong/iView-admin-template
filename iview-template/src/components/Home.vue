@@ -2,7 +2,9 @@
   <div class="home">
     <v-header></v-header>
     <v-sidebar></v-sidebar>
-    <router-view></router-view>
+    <div class="container-box">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -36,5 +38,11 @@
 </script>
 
 <style lang="less" scoped>
-  
+  @import '../assets/less/base.less';
+  .container-box{
+    padding-left: 260px;
+    padding-top: 20px;
+    padding-right: 20px;
+
+  }
 </style>
