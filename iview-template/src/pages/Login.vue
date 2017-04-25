@@ -74,7 +74,7 @@
     background-image: url('../assets/images/login-bg.png');
     .login-box{
       width: 400px;
-      height: 500px;
+      height: 300px;
       background-color: @white;
       margin: 100px auto;
       border-bottom: 1px solid @light-dark;
