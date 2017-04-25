@@ -32,7 +32,7 @@
       }
     },
     methods: {
-      ...mapMutations('setMenuName'),
+      ...mapMutations(['setMenuName']),
       selectOut (args) {
         this.setMenuName(args)
         switch (args) {

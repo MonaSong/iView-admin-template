@@ -16,7 +16,7 @@
     <div class="menu">
       <Row type="flex" justify="space-between">
         <Col :xs="{span:24}">
-          <Menu :theme="theme2" active-name="dashboard" :open-names="['1']" :style="{width:'auto'}" @on-select="skipPage">
+          <Menu :theme="theme2" :active-name="menuName?menuName:'dashboard'" :open-names="['1']" :style="{width:'auto'}" @on-select="skipPage">
             <Submenu name="1">
               <template slot="title">
                 <Icon type="ios-paper"></Icon>
@@ -57,6 +57,7 @@
 </template>
 
 <script>
+  import {mapState, mapMutations} from 'vuex'
   export default {
     data () {
       return {
@@ -65,7 +66,12 @@
         profile: 'Music Artist',
         isShowMenu: true,
         smWidth: 240
+        // myMenuName: 'dashboard'
+        // myMenuName: ''
       }
+    },
+    computed: {
+      ...mapState(['menuName'])
     },
     created () {
       // alert(1)
@@ -73,7 +79,9 @@
     mounted () {
     },
     methods: {
+      ...mapMutations(['setMenuName']),
       skipPage (args) {
+        this.setMenuName(args)
         switch (args) {
           case 'dashboard':
             this.$router.push('/index')
