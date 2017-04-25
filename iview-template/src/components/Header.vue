@@ -21,6 +21,7 @@
 </template>
 
 <script>
+  import {mapMutations} from 'vuex'
   export default {
     data () {
       return {
@@ -31,7 +32,9 @@
       }
     },
     methods: {
+      ...mapMutations('setMenuName'),
       selectOut (args) {
+        this.setMenuName(args)
         switch (args) {
           case 'out':
             this.$router.push('/')

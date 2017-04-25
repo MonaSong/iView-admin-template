@@ -1,10 +1,11 @@
 <template>
   <div>
     <Row type="flex" justify="space-between">
-      <Col></Col>
-    </Row>
-    <Row>
-      <Col></Col>
+      <Col span="24">
+        <div class="profile">
+          <p>你好！</p>
+        </div>
+      </Col>
     </Row>
   </div>
 </template>
@@ -14,6 +15,10 @@
     data () {
       return {
       }
+    },
+    created () {
+    },
+    methods: {
     }
   }
 </script>
