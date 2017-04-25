@@ -66,15 +66,12 @@
         profile: 'Music Artist',
         isShowMenu: true,
         smWidth: 240
-        // myMenuName: 'dashboard'
-        // myMenuName: ''
       }
     },
     computed: {
       ...mapState(['menuName'])
     },
     created () {
-      // alert(1)
     },
     mounted () {
     },
