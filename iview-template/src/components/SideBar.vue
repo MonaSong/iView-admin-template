@@ -29,7 +29,7 @@
             <Submenu name="2">
               <template slot="title">
                 <Icon type="ios-people"></Icon>
-                <span 用户管理</span>
+                <span>用户管理</span>
               </template>
               <Menu-item name="2-1">新增用户</Menu-item>
               <Menu-item name="2-2">活跃用户</Menu-item>

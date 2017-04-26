@@ -56,6 +56,8 @@
     methods: {
       ...mapMutations(['setMenuName']),
       handleSubmit () {
+        this.$store.state.userName = this.formInline.user
+        this.$store.state.userProfile = 'Music Artist'
         this.$router.push('/index')
         this.setMenuName('dashboard')
       }
@@ -71,12 +73,13 @@
     left: 0;
     right: 0;
     bottom: 0;
+    background-color: @theme-color;
     background-image: url('../assets/images/login-bg.png');
     .login-box{
       width: 400px;
       height: 300px;
       background-color: @white;
-      margin: 100px auto;
+      margin: 200px auto;
       border-bottom: 1px solid @light-dark;
       .login-header{
         height: 40px;

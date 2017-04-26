@@ -3,7 +3,9 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  menuName: ''
+  menuName: '',
+  userName: '',
+  userProfile: ''
 }
 
 const mutations = {
