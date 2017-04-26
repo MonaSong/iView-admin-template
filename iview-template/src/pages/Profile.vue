@@ -14,6 +14,10 @@
           <Card :bordered="false">
             <p slot="title">{{curName}}</p>
             <p>无边框内容填充无边框内容填充无边框内容填充无边框内容填充无边框内容填充无边框内容填充无边框内容填充无边框内容填充无边框内容填充无边框内容填充无边框内容填充。</p>
+            <p>{{inputInfo}}</p>
+            <h3>提交个人信息</h3>
+            <Input v-model="insertInput" placeholder="请输入..." style="width: 300px"></Input>
+            <Button type="primary" @click="insetInfo()">发表</Button>
           </Card>
         </div>
       </Col>
@@ -26,12 +30,21 @@
     data () {
       return {
         curName: this.$store.state.userName,
-        curProfile: this.$store.state.userProfile
+        curProfile: this.$store.state.userProfile,
+        inputContent: ['你好'],
+        inputInfo: '',
+        insertInput: ''
       }
     },
-    created () {
+    mounted () {
+      this.inputInfo = this.inputContent.join('')
     },
     methods: {
+      insetInfo () {
+        this.inputContent.push(this.insertInput)
+        this.inputInfo = this.inputContent.join('')
+        console.log(this.inputContent)
+      }
     }
   }
 </script>
