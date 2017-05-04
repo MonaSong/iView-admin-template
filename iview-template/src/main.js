@@ -8,9 +8,11 @@ import 'iview/dist/styles/iview.css'
 import axios from 'axios'
 import './assets/less/ivstyle.less'
 import './assets/less/layout.less'
+import Vuex from 'vuex'
 import store from './store'
 
 Vue.use(iView)
+Vue.use(Vuex)
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
 

@@ -4,7 +4,7 @@
       iview-admin-template
     </div>
     <Row type="flex" justify="space-between">
-      <Col :xs="{ span: 24 }" :lg="{ span: 3, offset: 21 }">
+      <Col :xs="{ span: 24 }" :lg="{ span: 4, offset: 20 }">
         <Menu mode="horizontal" :theme="theme1" active-name="1" @on-select="selectOut">
           <Submenu name="3">
               <template slot="title">
